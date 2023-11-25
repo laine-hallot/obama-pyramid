@@ -72,20 +72,20 @@ body {
 }
 
 .front {
-  background-image: url("/images/obamyd/obama_pyramid_face.png");
+  background-image: url("./images/obamyd/obama_pyramid_face.png");
   transform: translateZ(98.5px) rotateX(var(--face-incline));
   /* transform: rotateY(90deg) rotateX(var(--face-incline)) rotateZ(0deg) translateX(0px)
     translateY(0px) translateZ(90px); */
 }
 .back {
-  background-image: url("/images/obamyd/obama_pyramid_hair.png");
+  background-image: url("./images/obamyd/obama_pyramid_hair.png");
   transform: translateZ(-98.5px) rotateX(calc(-1 * var(--face-incline)));
   /* transform: rotateY(-90deg) rotateX(var(--face-incline)) rotateZ(0deg) translateX(0px)
     translateY(0px) translateZ(90px); */
 }
 
 .right {
-  background-image: url("/images/obamyd/obama_pyramid_right_ear.png");
+  background-image: url("./images/obamyd/obama_pyramid_right_ear.png");
   transform: translateX(-98.5px) rotateY(-270deg)
     rotateX(calc(-1 * var(--face-incline)));
   /* transform: rotateY(180deg) rotateX(-var(--face-incline)) rotateZ(0deg) translateX(0px)
@@ -93,7 +93,7 @@ body {
 }
 
 .left {
-  background-image: url("/images/obamyd/obama_pyramid_left_ear.png");
+  background-image: url("./images/obamyd/obama_pyramid_left_ear.png");
   transform: translateX(98.5px) rotateY(-90deg)
     rotateX(calc(-1 * var(--face-incline)));
   /* transform: rotateY(0deg) rotateX(-var(--face-incline)) rotateZ(0deg) translateX(0px)
@@ -101,7 +101,7 @@ body {
 }
 
 .bottom {
-  background-image: url("/images/obamyd/obama_pyramid_bottom.png");
+  background-image: url("./images/obamyd/obama_pyramid_bottom.png");
   transform: translateY(170px) rotateX(90deg);
 }
 
