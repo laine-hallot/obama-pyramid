@@ -1,0 +1,138 @@
+.container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 48px;
+}
+
+.box {
+  position: relative;
+  transition: all 0.3s ease-in;
+  animation: spin 20s infinite linear;
+  transform: rotateX(-50deg) rotate3d(0, 0.5, 0, 1turn);
+  transform-style: preserve-3d;
+  /* perspective: 2000px; */
+  perspective-origin: 100% 0%;
+  width: 600px;
+  height: 600px;
+}
+
+/* debug-markers - start */
+
+.axis-line {
+  position: absolute;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-bottom: 1px dashed black;
+}
+
+.vertical {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: 1px dashed black;
+}
+
+/* debug-markers  - end*/
+
+.face {
+  position: absolute;
+  width: 392px;
+  height: 394px;
+  top: 0px;
+  left: 106px;
+  backface-visibility: inherit;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+:root {
+  --face-incline: 29.839deg;
+}
+
+.front {
+  background-image: url("/images/obamyd/obama_pyramid_face.png");
+  transform: translateZ(98.5px) rotateX(var(--face-incline));
+  /* transform: rotateY(90deg) rotateX(var(--face-incline)) rotateZ(0deg) translateX(0px)
+    translateY(0px) translateZ(90px); */
+}
+.back {
+  mask-image: url("/images/obamyd/obama_pyramid_hair.png");
+  background-color: red;
+  transform: translateZ(-98.5px) rotateX(calc(-1 * var(--face-incline)));
+  /* transform: rotateY(-90deg) rotateX(var(--face-incline)) rotateZ(0deg) translateX(0px)
+    translateY(0px) translateZ(90px); */
+}
+
+.right {
+  background-image: url("/images/obamyd/obama_pyramid_right_ear.png");
+  transform: translateX(-98.5px) rotateY(-270deg)
+    rotateX(calc(-1 * var(--face-incline)));
+  /* transform: rotateY(180deg) rotateX(-var(--face-incline)) rotateZ(0deg) translateX(0px)
+    translateY(0px) translateZ(-90px); */
+}
+
+.left {
+  background-image: url("/images/obamyd/obama_pyramid_left_ear.png");
+  transform: translateX(98.5px) rotateY(-90deg)
+    rotateX(calc(-1 * var(--face-incline)));
+  /* transform: rotateY(0deg) rotateX(-var(--face-incline)) rotateZ(0deg) translateX(0px)
+    translateY(0px) translateZ(-90px); */
+}
+
+.bottom {
+  background-image: url("/images/obamyd/obama_pyramid_bottom.png");
+  transform: translateY(170px) rotateX(90deg);
+}
+
+@keyframes spin {
+  0% {
+    /* transform: rotateY(-10deg) rotate3d(0, 0.5, 0, 0turn); */
+    transform: rotateX(-20deg) rotate3d(0, 0.5, 0, 0turn);
+  }
+  100% {
+    /* transform: rotateY(-10deg) rotate3d(0, 0.5, 0, -1turn); */
+    transform: rotateX(-20deg) rotate3d(0, 0.5, 0, 1turn);
+  }
+}
+
+.shadow {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  width: 394px;
+  height: 394px;
+  background-color: transparent;
+  box-shadow: 0 0 394px 394px transparent;
+  animation: shadow 5s infinite linear;
+}
+
+@keyframes shadow {
+  0% {
+    transform: rotateX(90deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateZ(0);
+    /* transform: rotateX(90deg) rotateZ(-360deg); */
+  }
+  100% {
+    transform: rotateX(90deg) rotateZ(0deg);
+  }
+}
+
+.controls-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
