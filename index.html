@@ -8,20 +8,24 @@
   </head>
   <body>
     <div class="root">
-      <div class="controls-container">
-        <div class="controls">
-          <label for="counter-clockwise">Spin counter clockwise</label>
-          <input
-            type="radio"
-            name="obamyd-setting"
-            id="counter-clockwise"
-            checked="true"
-          />
-          <label for="clock-wise">Spin clockwise</label>
-          <input type="radio" name="obamyd-setting" id="clockwise" />
-          <input type="radio" name="obamyd-setting" id="" />
-        </div>
-      </div>
+      <span class="controls">Rotation Controls:</span>
+      <input
+        type="radio"
+        name="obamyd-setting"
+        id="counter-clockwise"
+        checked="true"
+        value="counter-clockwise"
+      />
+      <label for="counter-clockwise">Spin counter clockwise</label>
+      <input
+        type="radio"
+        name="obamyd-setting"
+        id="clockwise"
+        value="clockwise"
+      />
+      <label for="clockwise">Spin clockwise</label>
+      <input type="radio" name="obamyd-setting" id="none" value="none" />
+      <label for="none">None</label>
       <div class="container">
         <div class="box">
           <div class="axis-line horizontal"></div>
